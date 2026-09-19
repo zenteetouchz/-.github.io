@@ -82,7 +82,7 @@ st.markdown("""
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap');
         * { font-family: 'Sarabun', sans-serif; }
-        .stApp, .main, [data-testid="stAppViewContainer"] { background: linear-gradient(180deg, #f5f9ff 0%, #edf3ff 100%) !important; }
+        .stApp, .main, [data-testid="stAppViewContainer"] { background-color: #000033 !important; }
         [data-testid="stSidebar"] { display: none !important; }
         .block-container {
             padding-top: 1rem !important;
