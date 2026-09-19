@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 import json
 import os
-from datetime import datetim
+from datetime import datetime
 
 # ==========================================
 # 1. CONFIGURATION & DATA PERSISTENCE
