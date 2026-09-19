@@ -85,25 +85,60 @@ st.markdown("""
         .stApp, .main, [data-testid="stAppViewContainer"] { background-color: transparent !important; }
         [data-testid="stSidebar"] { display: none !important; }
         .block-container {
+            position: relative !important;
             padding-top: 3.5rem !important;
             padding-left: 1rem !important;
             padding-right: 1rem !important;
             max-width: 1500px !important;
         }
+        .admin-inline {
+            color: #aaaaaa !important;
+            font-size: 0.8rem;
+            text-align: right;
+            padding: 8px 6px;
+        }
         .top-bar {
-            background-color: #000000 !important; padding: 15px 18px; 
-            display: flex; justify-content: space-between; align-items: center;
+            background-color: #000000 !important; padding: 8px 12px; 
+            position: relative;
+            min-height: 44px;
+            display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
             border-radius: 0px 0px 15px 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             color: #ffffff !important;
-            gap: 12px;
+            gap: 0;
             flex-wrap: wrap;
+        }
+        .brand-title {
+            position: absolute;
+            top: 6px;
+            left: 12px;
+            z-index: 2;
+        }
+        .header-row {
+            align-items: center !important;
+            gap: 0.5rem !important;
+        }
+        .header-row .stRadio > div {
+            margin-bottom: 0 !important;
+            border-radius: 0 0 12px 12px;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.top-bar) {
+            background-color: #000000 !important;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            padding: 8px 12px !important;
+            align-items: center !important;
+        }
+        div[data-testid="stHorizontalBlock"]:has(.top-bar) .top-bar {
+            background-color: transparent !important;
+            box-shadow: none !important;
+            padding: 8px 6px !important;
         }
         div[data-testid="stWidgetLabel"] p { color: #ffffff !important; font-weight: 600 !important; font-size: 1rem !important; margin-bottom: 0px !important; }
         .stRadio div[role="radiogroup"] label { color: #ffffff !important; font-weight: 500 !important; font-size: 0.95rem !important; }
         .stRadio > div {
-            display: flex; justify-content: center; gap: 10px; padding: 10px 8px;
+            display: flex; justify-content: center; gap: 24px; padding: 6px 8px;
             background-color: #000000 !important; border-radius: 0px 0px 15px 15px;
-            margin-bottom: 20px; border: none !important;
+            margin-bottom: 0; border: none !important;
             flex-wrap: wrap;
         }
         .info-card {
@@ -148,6 +183,10 @@ st.markdown("""
                 max-width: 100% !important;
                 box-sizing: border-box !important;
             }
+            .admin-inline {
+                font-size: 0.72rem;
+                text-align: left;
+            }
             .top-bar {
                 padding: 12px 14px;
                 border-radius: 0 0 12px 12px;
@@ -161,9 +200,12 @@ st.markdown("""
             .top-bar > div > div:last-child {
                 font-size: 0.72rem !important;
             }
+            .header-row .stRadio > div {
+                margin-top: 0.25rem !important;
+            }
             .stRadio > div {
                 justify-content: flex-start;
-                gap: 8px;
+                gap: 10px;
             }
             .stRadio div[role="radiogroup"] label {
                 font-size: 0.82rem !important;
@@ -215,22 +257,24 @@ def get_status_badge(qty):
 # ==========================================
 # 4. TOP BAR & HORIZONTAL MENU
 # ==========================================
-st.markdown(f"""
-    <div class="top-bar">
-        <div style="display:flex; align-items:center; gap:15px;">
-            <div style="background-color:#0f0f0f; color:#ffffff !important; padding:6px 12px; border-radius:6px; font-weight:bold; letter-spacing:1px;">สาบาย Stock</div>
-            <div style="color:#dddddd !important; font-size:0.9rem;">ระบบบริหารจัดการคลังสินค้าดิจิทัลระดับร้านค้า</div>
+header_col, menu_col, admin_col = st.columns([1.8, 7.0, 1.2])
+with header_col:
+    st.markdown(f"""
+        <div class="top-bar">
+            <div class="brand-title" style="background-color:#0f0f0f; color:#ffffff !important; padding:6px 12px; border:2px solid #000000; border-radius:6px; font-weight:bold; letter-spacing:1px;">สาบาย Stock</div>
         </div>
-        <div style="color:#aaaaaa !important; font-size:0.8rem;">Admin User | {datetime.now().strftime('%d %B %Y')}</div>
-    </div>
-""", unsafe_allow_html=True)
-
-
-menu = st.radio(
-    "Menu", 
-    ["📈 Dashboard", "📄 รายละเอียดสินค้า", "📦 จัดการคลังสินค้า", "📊 วิเคราะห์ข้อมูล"],
-    horizontal=True
-)
+    """, unsafe_allow_html=True)
+with menu_col:
+    menu = st.radio(
+        "",
+        ["📈 Dashboard", "📄 รายละเอียดสินค้า", "📦 จัดการคลังสินค้า", "📊 วิเคราะห์ข้อมูล"],
+        horizontal=True,
+        label_visibility="collapsed"
+    )
+with admin_col:
+    st.markdown(f"""
+        <div class="admin-inline">Admin User | {datetime.now().strftime('%d %B %Y')}</div>
+    """, unsafe_allow_html=True)
 
 # ==========================================
 # 5. PAGES
