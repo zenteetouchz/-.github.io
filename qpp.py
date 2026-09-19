@@ -137,9 +137,15 @@ st.markdown("""
             font-size: 16px !important;
         }
         @media (max-width: 768px) {
+            .stApp, [data-testid="stAppViewContainer"] {
+                overflow-x: hidden !important;
+            }
             .block-container {
                 padding-left: 0.5rem !important;
                 padding-right: 0.5rem !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
             }
             .top-bar {
                 padding: 12px 14px;
@@ -147,6 +153,12 @@ st.markdown("""
             }
             .top-bar > div {
                 width: 100%;
+            }
+            .top-bar > div > div:first-child {
+                font-size: 0.85rem !important;
+            }
+            .top-bar > div > div:last-child {
+                font-size: 0.72rem !important;
             }
             .stRadio > div {
                 justify-content: flex-start;
@@ -158,6 +170,17 @@ st.markdown("""
             }
             div[data-testid="stHorizontalBlock"] > div {
                 width: 100% !important;
+                min-width: 0 !important;
+                flex: 1 1 100% !important;
+            }
+            div[data-testid="stHorizontalBlock"] {
+                flex-wrap: wrap !important;
+                width: 100% !important;
+                min-width: 0 !important;
+            }
+            h2 {
+                font-size: 1.35rem !important;
+                line-height: 1.25 !important;
             }
             .kpi-card {
                 min-height: 110px !important;
