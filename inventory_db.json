@@ -1,0 +1,32 @@
+[
+    {
+        "id": "SKU-001",
+        "name": "เสื้อ Hawail",
+        "category": "เสื้อ",
+        "price": 250,
+        "cost": 150,
+        "qty": 10,
+        "style": "#Minimal",
+        "date": "2026-09-19"
+    },
+    {
+        "id": "SKU-002",
+        "name": "เสื้อตราห่าน",
+        "category": "เสื้อ",
+        "price": 90,
+        "cost": 50,
+        "qty": 20,
+        "style": "#Vintage",
+        "date": "2026-09-19"
+    },
+    {
+        "id": "SKU-003",
+        "name": "เข็มขัด",
+        "category": "เครื่องประดับ",
+        "price": 90,
+        "cost": 40,
+        "qty": 10,
+        "style": "#Y2K",
+        "date": "2026-09-19"
+    }
+]

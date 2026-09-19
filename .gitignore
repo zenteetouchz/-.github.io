@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+.env.*
+.streamlit/secrets.toml
+inventory_db.json
+inventory_history.json
+.DS_Store
