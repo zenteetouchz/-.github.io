@@ -134,9 +134,9 @@ st.markdown("""
             padding: 8px 6px !important;
         }
         div[data-testid="stWidgetLabel"] p { color: #ffffff !important; font-weight: 600 !important; font-size: 1rem !important; margin-bottom: 0px !important; }
-        .stRadio div[role="radiogroup"] label { color: #ffffff !important; font-weight: 500 !important; font-size: 0.95rem !important; }
+        .stRadio div[role="radiogroup"] label { color: #ffffff !important; font-weight: 500 !important; font-size: 1.05rem !important; }
         .stRadio > div {
-            display: flex; justify-content: center; gap: 24px; padding: 6px 8px;
+            display: flex; justify-content: center; gap: 100px; padding: 6px 8px;
             background-color: #000000 !important; border-radius: 0px 0px 15px 15px;
             margin-bottom: 0; border: none !important;
             flex-wrap: wrap;
@@ -208,7 +208,7 @@ st.markdown("""
                 gap: 10px;
             }
             .stRadio div[role="radiogroup"] label {
-                font-size: 0.82rem !important;
+                font-size: 0.9rem !important;
                 padding: 8px 10px !important;
             }
             div[data-testid="stHorizontalBlock"] > div {
