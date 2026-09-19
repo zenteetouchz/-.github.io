@@ -82,10 +82,10 @@ st.markdown("""
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap');
         * { font-family: 'Sarabun', sans-serif; }
-        .stApp, .main, [data-testid="stAppViewContainer"] { background-color: #000033 !important; }
+        .stApp, .main, [data-testid="stAppViewContainer"] { background-color: transparent !important; }
         [data-testid="stSidebar"] { display: none !important; }
         .block-container {
-            padding-top: 1rem !important;
+            padding-top: 3.5rem !important;
             padding-left: 1rem !important;
             padding-right: 1rem !important;
             max-width: 1500px !important;
@@ -141,6 +141,7 @@ st.markdown("""
                 overflow-x: hidden !important;
             }
             .block-container {
+                padding-top: 3.5rem !important;
                 padding-left: 0.5rem !important;
                 padding-right: 0.5rem !important;
                 width: 100% !important;
