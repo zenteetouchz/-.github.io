@@ -205,7 +205,7 @@ st.markdown("""
             }
             .stRadio > div {
                 justify-content: flex-start;
-                gap: 10px;
+                gap: 5px;
             }
             .stRadio div[role="radiogroup"] label {
                 font-size: 0.9rem !important;
